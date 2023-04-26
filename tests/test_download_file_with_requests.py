@@ -3,7 +3,7 @@ import requests
 from file_paths.file_paths import path_to_tmp
 
 
-def test_downloaded_file_size():
+def test_download_file_with_requests():
     # TODO: сохранять и читать из tmp, использовать универсальный путь
 
     url = 'https://selenium.dev/images/selenium_logo_square_green.png'
