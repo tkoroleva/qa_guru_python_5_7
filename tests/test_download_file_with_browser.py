@@ -7,7 +7,7 @@ from file_paths.file_paths import path_to_tmp
 
 # TODO: оформить в тест, добавить проверки и использовать универсальный путь к tmp
 
-def test_download_file_with_browser():
+def test_download_file_with_browser(create_tmp):
     options = webdriver.ChromeOptions()
     prefs = {
         "download.default_directory": path_to_tmp,
@@ -26,4 +26,3 @@ def test_download_file_with_browser():
     assert os.path.getsize(os.path.join(path_to_tmp, 'pytest-main.zip')) > 100
     tmp = os.path.join(path_to_tmp, 'pytest-main.zip')
     os.remove(tmp)
-    os.rmdir(path_to_tmp)
